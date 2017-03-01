@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+  function search() {
+	  alert("ok");
+	  $.ajax({
+		    url: 'http://localhost:8080/Edutube/utils/advanceSearch',
+		    type: 'get',
+			contentType: "application/json; charset=utf-8",
+			dataType:'json',
+			data: {{'board_name' : $("#board").val()}
+				   {'course_name' : $("#course").val()}
+			       {'subjectname' : $("#subject").val()}
+				  },
+			success: function(result) {
+				console.log(result); 
+		    	alert(result);
+		    	$.each(result, function(i, item) {
+		    	    alert(JSON.stringify(item));
+		    	});	        
+		    }
+	  });
+	
+  }
+  </script>
+</head>
+<body>
+<input type="text" id="board" name="board" placeholder="Enter Board">
+<input type="text" id="course" name="course" placeholder="Enter Course">
+<input type="text" id="subject" name="subject" placeholder="Enter Subject">
+<input type="button" onclick="search()" value="click">
+</body>
+</html>

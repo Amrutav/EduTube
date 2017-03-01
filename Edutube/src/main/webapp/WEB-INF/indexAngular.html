@@ -1,0 +1,231 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html ng-app="myRegistration"> -->
+<!-- <head> -->
+<!--     <title>Registration Form</title> -->
+
+<!--     Include the FontAwesome CSS if you want to use feedback icons provided by FontAwesome -->
+<!--     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" /> -->
+<!--     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css"/> -->
+<!--     <link rel="stylesheet" href="dist/css/formValidation.css"/> -->
+<!--     <link rel="stylesheet" href="css/style.css" /> -->
+<!-- </head> -->
+<!-- <body> -->
+
+<!-- <div class="container"> -->
+<!--    <div class="form"> -->
+<!--         <h2>Baru disini?</h2> -->
+<!--         <div class="tab"> -->
+<!--            <button type="button" class="btn btn-warning btn-lg">Masuk</button> -->
+<!--            <p>atau</p> -->
+<!--            <h3>Silakan isi detail kamu di sini</h3> -->
+<!--         </div> -->
+<!--         <div class="clearfix"> </div> -->
+<!--         <hr> -->
+<!--         <div class="row"> -->
+<!--                    <div class="col-md-7"> -->
+<!--                           <h3>Info detail tentang kamu</h3> -->
+
+<!--                 <form id="registrationData" method="post" name="regForm" novalidate class="form-horizontal" action="#" ng-controller="FormCtrl"> -->
+<!--                     <div class="form-group"> -->
+<!--                       <label for="inputEmail" class="col-lg-4 control-label">Gender</label> -->
+<!--                       <div class="col-lg-8"> -->
+<!--                         <div class="radio"> -->
+<!--                           <label> -->
+<!--                             <input required ng-model="form.gender" type="radio" name="gender" id="gender1" value="female" > -->
+<!--                             Female -->
+<!--                           </label> -->
+<!--                         </div> -->
+<!--                         <div class="radio"> -->
+<!--                           <label> -->
+<!--                             <input required type="radio" ng-model="form.gender" name="gender" id="gender2" value="male" > -->
+<!--                             Male -->
+<!--                           </label> -->
+<!--                         </div> -->
+
+<!--                         <span class="required" ng-show="regForm.gender.$dirty && regForm.gender.$invalid"> -->
+<!--                           <span ng-show="regForm.gender.$error.required">Gender is required.</span> -->
+<!--                         </span> -->
+<!--                        </div> -->
+<!--                     </div> -->
+
+<!--                     <div class="form-group"> -->
+<!--                       <label for="firstname" class="col-lg-4 control-label">Nama depan</label> -->
+<!--                       <div class="col-lg-8"> -->
+<!--                         <input required type="text" class="form-control" id="firstname" name="firstname" ng-model="form.firstname" placeholder="Nama depan" > -->
+
+<!--                         <span class="required" ng-show="regForm.firstname.$dirty && regForm.firstname.$invalid"> -->
+<!--                         <span ng-show="regForm.firstname.$error.required">First name is required.</span> -->
+<!--                         </span> -->
+<!--                       </div> -->
+<!--                     </div> -->
+
+<!--                     <div class="form-group"> -->
+<!--                       <label for="lastname" class="col-lg-4 control-label">Nama belakang</label> -->
+<!--                       <div class="col-lg-8"> -->
+<!--                         <input type="text" class="form-control" id="lastname" name="lastname" ng-model="form.lastname" placeholder="Nama belakang" required > -->
+
+<!--                         <span class="required" ng-show="regForm.lastname.$dirty && regForm.lastname.$invalid"> -->
+<!--                         <span ng-show="regForm.firstname.$error.required">Last name is required.</span> -->
+<!--                         </span> -->
+<!--                       </div> -->
+<!--                     </div> -->
+
+<!--                     <div class="form-group"> -->
+<!--                       <label for="Email" class="col-lg-4 control-label">Email</label> -->
+<!--                       <div class="col-lg-8"> -->
+<!--                         <input type="email" class="form-control" id="Email" placeholder="Email" ng-model="form.email" name="email"  required> -->
+
+<!--                         <span class="required" ng-show="regForm.email.$dirty && regForm.email.$invalid"> -->
+<!--                         <span ng-show="regForm.email.$error.required">Email is required.</span> -->
+<!--                         <span ng-show="regForm.email.$invalid">Enter valid email.</span> -->
+
+<!--                         </span> -->
+<!--                       </div> -->
+<!--                     </div> -->
+
+<!--                     <div class="form-group"> -->
+<!--                       <label for="Mobile" class="col-lg-4 control-label">Nomor handphone</label> -->
+<!--                       <div class="col-lg-8"> -->
+<!--                         <input type="tel" class="form-control" id="Mobile" name="mobile" ng-model="form.mobile" placeholder="123456789" pattern="[0-9]{10}" required> -->
+
+<!--                         <span class="required" ng-show="regForm.mobile.$dirty && regForm.mobile.$invalid"> -->
+<!--                         <span ng-show="regForm.mobile.$error.required">Mobile number is required.</span> -->
+<!--                         </span> -->
+<!--                       </div> -->
+<!--                     </div> -->
+
+<!--                     <div class="form-group"> -->
+<!--                         <label for="dtp_input2" class="col-lg-4 control-label">Tangal lahir</label> -->
+<!--                         <div class="input-group date form_date col-lg-8" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd"> -->
+<!--                             <input class="form-control" size="10" type="text" value="" ng-model="form.dob" placeholder="DD/MM/YYYY" readonly required> -->
+
+<!--                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span> -->
+
+
+<!--                         <span class="required" ng-show="regForm.dob.$dirty && regForm.dob.$invalid"> -->
+<!--                         <span ng-show="regForm.dob.$error.required">DOB is required.</span> -->
+<!--                         </span> -->
+
+<!--                         </div> -->
+<!--                         <input type="hidden" id="dtp_input2" value="" /><br/> -->
+<!--                     </div> -->
+
+<!--                     <div class="form-group"> -->
+<!--                   <label for="select" class="col-lg-4 control-label">Jenis identitas</label> -->
+<!--                   <div class="col-lg-8"> -->
+<!--                     <select ng-model="form.identity" class="form-control" id="select" required> -->
+<!--                       <option>KTP</option> -->
+<!--                       <option>SIM</option> -->
+<!--                     </select> -->
+
+<!--                     <span class="required" ng-show="regForm.identity.$dirty && regForm.identity.$invalid"> -->
+<!--                         <span ng-show="regForm.identity.$error.required">Identity is required.</span> -->
+<!--                         </span> -->
+
+<!--                   </div> -->
+<!--                 </div> -->
+
+<!--                 <div class="form-group"> -->
+<!--                   <label for="IDnumber" class="col-lg-4 control-label">Nomor identitas</label> -->
+<!--                   <div class="col-lg-8"> -->
+<!--                     <input ng-model="form.identitynumber" type="text" class="form-control" id="IDnumber" placeholder="123456789" pattern="[0-9]{10}" required> -->
+<!--                     <span class="help-block">Mohon membawa identitas diri (kTP/SIM)saat melakukan proses klaim</span> -->
+
+<!--                     <span class="required" ng-show="regForm.identitynumber.$dirty && regForm.identitynumber.$invalid"> -->
+<!--                         <span ng-show="regForm.identitynumber.$error.required">Identity number is required.</span> -->
+<!--                         </span> -->
+<!--                   </div> -->
+<!--                 </div> -->
+
+<!--                 <div class="form-group"> -->
+<!--                   <label for="address" class="col-lg-4 control-label">Alamat sesuai identitas</label> -->
+<!--                   <div class="col-lg-8"> -->
+<!--                     <textarea  ng-model="form.address" class="form-control" rows="3" id="address" name="address" placeholder="Alamat sesuai identitas" required max-length="50"></textarea> -->
+
+<!--                     <span class="required" ng-show="regForm.address.$dirty && regForm.address.$invalid"> -->
+<!--                         <span ng-show="regForm.address.$error.required">Address is required.</span> -->
+<!--                         </span> -->
+
+<!--                   </div> -->
+<!--                 </div> -->
+
+<!--                 <div class="form-group"> -->
+<!--                   <label for="address2" class="col-lg-4 control-label">Alamat surat-menyurat</label> -->
+<!--                   <div class="col-lg-8"> -->
+<!--                     <span class="help-block"> -->
+<!--                     <input type="checkbox" id="checkbox" onchange="CopyAdd();"> Klik di sini jika sama dengan alamat sesuai identitas</span> -->
+<!--                      <textarea ng-model="form.address2" class="form-control" rows="3" id="address2" placeholder="Alamat surat-menyurat" ></textarea> -->
+<!--                   </div> -->
+<!--                 </div> -->
+
+<!--                 <div class="form-group"> -->
+<!--                   <label for="select" class="col-lg-4 control-label">Details penerima manfaat</label> -->
+<!--                   <div class="col-lg-8"> -->
+<!--                     <select ng-model="form.beneficiaries" class="form-control" id="select" required> -->
+<!--                       <option>Ahl iWaris</option> -->
+<!--                       <option>----</option> -->
+<!--                     </select> -->
+
+<!--                     <span class="required" ng-show="regForm.beneficiaries.$dirty && regForm.beneficiaries.$invalid"> -->
+<!--                         <span ng-show="regForm.beneficiaries.$error.required">Details is required.</span> -->
+<!--                         </span> -->
+
+<!--                   </div> -->
+<!--                 </div> -->
+
+<!--                 <div class="form-group"> -->
+<!--                   <div class="col-lg-10 "> -->
+<!--                     <button type="reset" class="btn btn-default btn-lg">Kembali</button> -->
+<!--                     <button type="button" ng-disabled="regForm.$invalid || !regForm.$dirty" ng-click="submitForm()" name="signup" id="signup" value="Sign up" class="btn btn-warning btn-lg">Kirim</button> -->
+<!--                   </div> -->
+<!--                 </div> -->
+
+<!--                 </form> -->
+
+<!--                 </div> -->
+
+<!--                 <div class="col-md-5 note"> -->
+<!--                 <img src="img/profile.png"> -->
+<!--                                 <h3>Penting untuk diketahui</h3> -->
+<!--                                 <p> -->
+<!--                                         Untuk mengajukan  permohonan Asurnsi,kamu harus tercatat sebagai: -->
+<!--                                 </p> -->
+<!--                                 <ul> -->
+<!--                   <li>Warga negara Indonesia</li> -->
+<!--                   <li>Berumur 18 sampai 65 tahun</li> -->
+<!--                   <li>Memiliki KTP/SIM yang masih berlaku</li> -->
+<!--                 </ul> -->
+
+
+<!-- </div> -->
+
+
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
+<!-- <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script> -->
+<!--     <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
+<!--     <script type="text/javascript" src="dist/js/formValidation.js"></script> -->
+<!--     <script type="text/javascript" src="dist/js/framework/bootstrap.js"></script> -->
+<!--     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
+<!-- <script type="text/javascript" src="dist/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script> -->
+<!--     <script type="text/javascript" src="dist/js/registration.ctrl.js"></script> -->
+<!--     <script type="text/javascript" src="dist/js/Utils.js"></script> -->
+<!-- <script type="text/javascript"> -->
+//    function CopyAdd() {
+
+//   var cb1 = document.getElementById('checkbox');
+//   var a1 = document.getElementById('address');
+//   var al1 = document.getElementById('address2');
+
+//   if (cb1.checked) {
+//     al1.value = a1.value;
+
+//   } else {
+//     al1.value = '';
+//   }
+// }
+<!-- </script> -->
+
+<!-- </body> -->
+<!-- </html> -->

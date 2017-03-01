@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+  function search() {
+	  alert("ok");
+	  $.ajax({
+		    url: 'http://localhost:8080/Edutube/utils/searchBySubject',
+		    type: 'get',
+			contentType: "application/json; charset=utf-8",
+			dataType:'json',
+			data: {'subjectname' : $("#input").val()},
+			success: function(result) {
+				console.log(result); 
+		    	alert(result);
+		    	$.each(result, function(i, item) {
+		    	    alert(JSON.stringify(item));
+		    	});	        
+		    }
+	  });
+	
+  }
+  </script>
+
+</head>
+
+<body>
+<input type="text" id="input" name="input" placeholder="Search By Subject">
+<input type="button" onclick="javascript:search();" value="click">
+</body>
+</html>
